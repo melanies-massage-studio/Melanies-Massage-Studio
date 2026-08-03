@@ -3,30 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melanies Massage Studio | Exklusive Körpertherapie Tamm</title>
+  <title>Zoller Bodywork | Exklusive Körpertherapie & Wellness Tamm</title>
   
-  <!-- Modern High-End Spa Fonts: Cinzel & Cormorant Garamond & Plus Jakarta Sans -->
+  <!-- Modern Fonts: Cormorant Garamond (Luxury Serif) & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
 
   <style>
-    /* --- DESIGN SYSTEM & BRIGHT LUXURY SPA PALETTE --- */
+    /* --- DESIGN SYSTEM & WELLNESS PALETTE --- */
     :root {
-      --bg-light: #fdfbf7;
-      --bg-card: rgba(255, 255, 255, 0.88);
-      --bg-card-hover: rgba(255, 255, 255, 0.98);
-      --accent-gold: #b89248;
-      --accent-gold-soft: #d4b36a;
-      --accent-gold-light: #f4ece1;
-      --text-dark: #1f2421;
-      --text-muted: #667069;
-      --border-gold: rgba(184, 146, 72, 0.25);
-      --shadow-subtle: 0 15px 35px rgba(31, 36, 33, 0.05);
-      --shadow-hover: 0 25px 50px rgba(184, 146, 72, 0.15);
-      --glass-blur: blur(20px);
-      --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --bg-dark: #0b0f0d;
+      --bg-card: rgba(18, 25, 22, 0.65);
+      --accent-gold: #d4af37;
+      --accent-gold-light: #f3e5ab;
+      --accent-emerald: #2d4a3e;
+      --text-cream: #f4f1ea;
+      --text-muted: #9ab0a3;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --glass-blur: blur(16px);
+      --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -38,20 +35,17 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
+      background-color: var(--bg-dark);
+      color: var(--text-cream);
       line-height: 1.7;
       overflow-x: hidden;
+      selection-background-color: var(--accent-gold);
     }
 
-    h1, h2, h3, .font-cinzel {
-      font-family: 'Cinzel', serif;
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
-
-    .font-serif {
+    h1, h2, h3, .font-serif {
       font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 0.5px;
     }
 
     /* --- NAVIGATION --- */
@@ -60,10 +54,10 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(253, 251, 247, 0.85);
+      background: rgba(11, 15, 13, 0.7);
       backdrop-filter: var(--glass-blur);
       border-bottom: 1px solid var(--border-gold);
-      padding: 1rem 6%;
+      padding: 1.2rem 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -71,29 +65,22 @@
     }
 
     .brand-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--text-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      color: var(--text-cream);
       text-decoration: none;
       text-transform: uppercase;
-      z-index: 1001;
     }
 
     .brand-logo span {
       color: var(--accent-gold);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+      font-style: italic;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
       align-items: center;
     }
@@ -101,7 +88,7 @@
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       transition: var(--transition-smooth);
@@ -115,34 +102,21 @@
       background: transparent;
       border: 1px solid var(--accent-gold);
       color: var(--accent-gold);
-      padding: 0.35rem 0.9rem;
+      padding: 0.4rem 1rem;
       border-radius: 40px;
       cursor: pointer;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       letter-spacing: 1px;
-      font-weight: 600;
       transition: var(--transition-smooth);
-      z-index: 1001;
     }
 
     .lang-btn:hover {
       background: var(--accent-gold);
-      color: #ffffff;
+      color: var(--bg-dark);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
     }
 
-    /* MOBILE MENU TOGGLE BUTTON */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.4rem;
-      color: var(--text-dark);
-      cursor: pointer;
-      z-index: 1001;
-      padding: 0.2rem;
-    }
-
-    /* --- HERO SECTION --- */
+    /* --- HERO SECTION WITH CANVAS PARTICLES --- */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -150,9 +124,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 7rem 1.2rem 4rem;
+      padding: 0 1.5rem;
       overflow: hidden;
-      background: radial-gradient(circle at 50% 40%, rgba(244, 236, 225, 0.6) 0%, var(--bg-light) 70%);
     }
 
     #particleCanvas {
@@ -168,90 +141,82 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 850px;
+      max-width: 900px;
+      margin-top: 2rem;
     }
 
     .hero-tag {
       display: inline-block;
-      padding: 0.4rem 1.2rem;
+      padding: 0.4rem 1.4rem;
       border: 1px solid var(--border-gold);
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: var(--glass-blur);
+      background: rgba(212, 175, 55, 0.05);
       border-radius: 50px;
-      color: var(--accent-gold);
-      font-size: 0.75rem;
-      letter-spacing: 2px;
+      color: var(--accent-gold-light);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
+      margin-bottom: 2rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.1rem, 5vw, 4.2rem);
-      line-height: 1.2;
+      font-size: clamp(3rem, 6vw, 5.2rem);
+      line-height: 1.08;
       margin-bottom: 1.5rem;
-      color: var(--text-dark);
-      font-weight: 400;
-    }
-
-    .hero h1 span {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      color: var(--accent-gold);
-      font-size: 1.05em;
+      background: linear-gradient(180deg, #ffffff 0%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 620px;
-      margin: 0 auto 2.5rem;
+      max-width: 650px;
+      margin: 0 auto 3rem;
       font-weight: 300;
     }
 
     .btn-gold {
       display: inline-block;
-      padding: 1rem 2.4rem;
-      background: linear-gradient(135deg, #b89248 0%, #967330 100%);
-      color: #ffffff;
-      font-weight: 500;
+      padding: 1.1rem 2.8rem;
+      background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+      color: #0b0f0d;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       text-decoration: none;
       border-radius: 50px;
       transition: var(--transition-smooth);
-      box-shadow: 0 10px 25px rgba(184, 146, 72, 0.25);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
     }
 
     .btn-gold:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(184, 146, 72, 0.38);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
     }
 
-    /* --- SCROLL REVEAL ANIMATIONS --- */
+    /* --- CRAZY SCROLL REVEAL ANIMATIONS --- */
     .reveal-zoom {
       opacity: 0;
-      transform: scale(0.94) translateY(30px);
+      transform: scale(0.88) translateY(50px);
       transition: var(--transition-smooth);
     }
 
     .reveal-left {
       opacity: 0;
-      transform: translateX(-40px);
+      transform: translateX(-80px);
       transition: var(--transition-smooth);
     }
 
     .reveal-right {
       opacity: 0;
-      transform: translateX(40px);
+      transform: translateX(80px);
       transition: var(--transition-smooth);
     }
 
     .reveal-up {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(60px);
       transition: var(--transition-smooth);
     }
 
@@ -260,30 +225,36 @@
       transform: scale(1) translate(0) !important;
     }
 
-    /* --- PRICING SECTION --- */
+    /* --- EXCLUSIVE PRICING CONCEPT --- */
     .pricing-section {
-      padding: 6rem 6%;
+      padding: 8rem 8%;
       position: relative;
-      background: #f8f4ee;
+      background: linear-gradient(180deg, var(--bg-dark) 0%, #080b09 100%);
     }
 
     .section-header {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 3.5rem;
+      margin: 0 auto 5rem;
     }
 
     .section-header h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      color: var(--text-dark);
-      margin-bottom: 0.8rem;
+      font-size: 3.2rem;
+      color: var(--text-cream);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      letter-spacing: 1px;
     }
 
     .pricing-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -292,89 +263,102 @@
       border: 1px solid var(--border-gold);
       backdrop-filter: var(--glass-blur);
       border-radius: 20px;
-      padding: 3rem 1.8rem;
+      padding: 3.5rem 2rem;
       text-align: center;
       position: relative;
-      box-shadow: var(--shadow-subtle);
+      overflow: hidden;
       transition: var(--transition-smooth);
     }
 
+    .price-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    }
+
     .price-box:hover {
-      transform: translateY(-6px);
-      background: var(--bg-card-hover);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-10px);
       border-color: var(--accent-gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(212, 175, 55, 0.15);
     }
 
     .price-duration {
-      font-size: 0.85rem;
+      font-size: 1rem;
       text-transform: uppercase;
-      letter-spacing: 2.5px;
+      letter-spacing: 2px;
       color: var(--text-muted);
-      font-weight: 500;
     }
 
     .price-amount {
-      font-family: 'Cinzel', serif;
-      font-size: 3.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
       color: var(--accent-gold);
-      margin: 0.6rem 0;
-      font-weight: 600;
+      margin: 1rem 0;
     }
 
-    /* --- SERVICES SECTION --- */
+    .price-desc {
+      color: var(--text-cream);
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+
+    /* --- WELLNESS SERVICES GRID --- */
     .services-section {
-      padding: 6rem 6%;
-      background: var(--bg-light);
+      padding: 8rem 8%;
+      background: var(--bg-dark);
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1250px;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2.5rem;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
     .service-card {
       background: var(--bg-card);
-      border: 1px solid rgba(184, 146, 72, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 20px;
-      padding: 2.5rem 1.8rem;
-      box-shadow: var(--shadow-subtle);
+      padding: 3rem 2.2rem;
+      backdrop-filter: var(--glass-blur);
       transition: var(--transition-smooth);
+      position: relative;
     }
 
     .service-card:hover {
-      border-color: var(--accent-gold);
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
+      border-color: var(--border-gold);
+      transform: translateY(-8px);
+      background: rgba(22, 32, 28, 0.85);
     }
 
     .service-icon {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--accent-gold);
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.8rem;
     }
 
     .service-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 0.8rem;
-      color: var(--text-dark);
-      font-weight: 500;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-cream);
     }
 
     .service-card p {
       color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      line-height: 1.8;
       font-weight: 300;
     }
 
-    /* --- CONTACT SECTION --- */
+    /* --- CONTACT SANCTUARY --- */
     .contact-section {
-      padding: 6rem 6%;
-      background: linear-gradient(180deg, var(--bg-light) 0%, #f4ece1 100%);
+      padding: 9rem 8%;
+      background: radial-gradient(circle at 50% 50%, rgba(29, 43, 36, 0.4) 0%, rgba(11, 15, 13, 1) 100%);
       text-align: center;
     }
 
@@ -382,98 +366,56 @@
       max-width: 800px;
       margin: 0 auto;
       border: 1px solid var(--border-gold);
-      border-radius: 24px;
-      padding: 3.5rem 1.8rem;
+      border-radius: 30px;
+      padding: 4.5rem 2.5rem;
       background: var(--bg-card);
       backdrop-filter: var(--glass-blur);
-      box-shadow: var(--shadow-hover);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     }
 
     .contact-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 2.5rem;
+      gap: 3rem;
+      margin-top: 3rem;
     }
 
     .contact-item {
-      color: var(--text-dark);
+      color: var(--text-cream);
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 1rem;
       transition: var(--transition-smooth);
     }
 
     .contact-item:hover {
       color: var(--accent-gold);
+      transform: scale(1.05);
     }
 
     .contact-item i {
       color: var(--accent-gold);
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
 
     footer {
       text-align: center;
-      padding: 2.5rem 1rem;
-      border-top: 1px solid var(--border-gold);
+      padding: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
       color: var(--text-muted);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       letter-spacing: 1px;
-      background: #f4ece1;
     }
 
-    /* --- RESPONSIVE MOBILE MEDIA QUERIES --- */
+    /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 850px) {
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 320px;
-        height: 100vh;
-        background: rgba(253, 251, 247, 0.98);
-        backdrop-filter: blur(25px);
-        border-left: 1px solid var(--border-gold);
-        flex-direction: column;
-        justify-content: center;
-        gap: 2.5rem;
-        transition: var(--transition-smooth);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-      }
-
-      .nav-links.nav-active {
-        right: 0;
-      }
-
-      .nav-links a {
-        font-size: 0.95rem;
-      }
-
-      .hero {
-        padding: 6rem 1rem 3rem;
-      }
-
-      .pricing-section, .services-section, .contact-section {
-        padding: 4.5rem 5%;
-      }
-
-      .services-grid, .pricing-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-      }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.8rem; }
+      .section-header h2 { font-size: 2.4rem; }
+      .contact-links { flex-direction: column; gap: 1.5rem; }
     }
   </style>
 </head>
@@ -481,53 +423,52 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="#" class="brand-logo">Melanies <span>Massage</span></a>
-    
-    <div class="nav-right">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" onclick="closeMenu()" data-de="Über Mich" data-en="About">Über Mich</a></li>
-        <li><a href="#preise" onclick="closeMenu()" data-de="Preise" data-en="Pricing">Preise</a></li>
-        <li><a href="#behandlungen" onclick="closeMenu()" data-de="Behandlungen" data-en="Treatments">Behandlungen</a></li>
-        <li><a href="#kontakt" onclick="closeMenu()" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
-      </ul>
-      
-      <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">EN</button>
-      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu"><i class="fa-solid fa-bars" id="menuIcon"></i></button>
-    </div>
+    <a href="#" class="brand-logo">Zoller <span>Bodywork</span></a>
+    <ul class="nav-links">
+      <li><a href="#philosophie" data-de="Philosophie" data-en="Philosophy">Philosophie</a></li>
+      <li><a href="#preise" data-de="Preise" data-en="Pricing">Preise</a></li>
+      <li><a href="#behandlungen" data-de="Behandlungen" data-en="Treatments">Behandlungen</a></li>
+      <li><a href="#kontakt" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">EN</button>
   </nav>
 
-  <!-- HERO SECTION WITH LIGHT ROTATING PARTICLES CANVAS -->
-  <section class="hero" id="about">
+  <!-- HERO SECTION WITH ROTATING PARTICLES CANVAS -->
+  <section class="hero" id="philosophie">
     <canvas id="particleCanvas"></canvas>
     
     <div class="hero-content reveal-zoom">
-      <div class="hero-tag" data-de="📍 71732 Tamm" data-en="📍 71732 Tamm, Germany">📍 71732 Tamm</div>
-      <h1 data-de="Melanies Massage Studio <span>Exklusive Körpertherapie & Auszeit</span>" data-en="Melanies Massage Studio <span>Exclusive Bodywork & Recovery</span>">Melanies Massage Studio <span>Exklusive Körpertherapie & Auszeit</span></h1>
-      <p data-de="Erleben Sie individuell abgestimmte Behandlungen für gezielte Schmerzlinderung, tiefenwirksame Muskelregeneration und vollkommene Entspannung." data-en="Experience tailored treatments designed for targeted pain relief, deep muscular recovery, and total relaxation.">Erleben Sie individuell abgestimmte Behandlungen für gezielte Schmerzlinderung, tiefenwirksame Muskelregeneration und vollkommene Entspannung.</p>
-      <a href="#kontakt" class="btn-gold" data-de="Termin Vereinbaren" data-en="Book Session">Termin Vereinbaren</a>
+      <div class="hero-tag" data-de="📍 Sanctuary in 71732 Tamm" data-en="📍 Sanctuary in 71732 Tamm">📍 Sanctuary in 71732 Tamm</div>
+      <h1 data-de="Körpertherapie & Regeneration auf Höchstem Niveau" data-en="High-End Bodywork & Deep Regeneration">Körpertherapie & Regeneration auf Höchstem Niveau</h1>
+      <p data-de="Erleben Sie maßgeschneiderte Massagetherapien zur Befreiung von Verspannungen und zur tiefen Wiederherstellung Ihres körperlichen Gleichgewichts." data-en="Experience bespoke bodywork therapies designed to release deep tension and restore your physical equilibrium.">Erleben Sie maßgeschneiderte Massagetherapien zur Befreiung von Verspannungen und zur tiefen Wiederherstellung Ihres körperlichen Gleichgewichts.</p>
+      <a href="#kontakt" class="btn-gold" data-de="Jetzt Termin Buchen" data-en="Book Your Experience">Jetzt Termin Buchen</a>
     </div>
   </section>
 
-  <!-- MINIMALIST PRICING SECTION -->
+  <!-- PRICING SECTION -->
   <section class="pricing-section" id="preise">
     <div class="section-header reveal-up">
-      <h2 data-de="Preise" data-en="Pricing">Preise</h2>
+      <h2 data-de="Transparente Preisphilosophie" data-en="Transparent Pricing Philosophy">Transparente Preisphilosophie</h2>
+      <p data-de="Keine versteckten Gebühren. Reine Zeit für Ihr Wohlbefinden: 1 Minute = 1 Euro." data-en="No hidden fees. Pure dedicated time for your well-being: €1 per minute.">Keine versteckten Gebühren. Reine Zeit für Ihr Wohlbefinden: 1 Minute = 1 Euro.</p>
     </div>
 
     <div class="pricing-cards">
-      <div class="price-box reveal-up">
+      <div class="price-box reveal-left">
         <div class="price-duration">30 Minuten</div>
         <div class="price-amount">30 €</div>
+        <div class="price-desc" data-de="Fokussierte Teilkörperbehandlung" data-en="Targeted Focus Treatment">Fokussierte Teilkörperbehandlung</div>
       </div>
 
-      <div class="price-box reveal-up">
+      <div class="price-box reveal-zoom">
         <div class="price-duration">40 Minuten</div>
         <div class="price-amount">40 €</div>
+        <div class="price-desc" data-de="Intensive Spezialbehandlung" data-en="Intensive Specialized Session">Intensive Spezialbehandlung</div>
       </div>
 
-      <div class="price-box reveal-up">
+      <div class="price-box reveal-right">
         <div class="price-duration">60 Minuten</div>
         <div class="price-amount">60 €</div>
+        <div class="price-desc" data-de="Ganzheitliche Tiefenregeneration" data-en="Holistic Full Body Regeneration">Ganzheitliche Tiefenregeneration</div>
       </div>
     </div>
   </section>
@@ -535,57 +476,58 @@
   <!-- SERVICES SECTION -->
   <section class="services-section" id="behandlungen">
     <div class="section-header reveal-up">
-      <h2 data-de="Behandlungen" data-en="Treatments">Behandlungen</h2>
+      <h2 data-de="Exklusive Behandlungen" data-en="Exclusive Treatments">Exklusive Behandlungen</h2>
+      <p data-de="Verbindung traditioneller Techniken und moderner Körpertherapie." data-en="Fusing traditional techniques with modern manual therapies.">Verbindung traditioneller Techniken und moderner Körpertherapie.</p>
     </div>
 
     <div class="services-grid">
       <!-- 1. Klassische Massage -->
       <div class="service-card reveal-up">
-        <i class="fa-solid fa-hands-holding service-icon"></i>
+        <i class="fa-solid fa-feather-pointed service-icon"></i>
         <h3 data-de="Klassische Massage" data-en="Classic Massage">Klassische Massage</h3>
-        <p data-de="Löst muskuläre Verspannungen, fördert die Zirkulation und bringt den Körper wieder in eine natürliche Balance." data-en="Relieves muscular tension, boosts circulation, and restores your body's natural balance.">Löst muskuläre Verspannungen, fördert die Zirkulation und bringt den Körper wieder in eine natürliche Balance.</p>
+        <p data-de="Löst muskuläre Verspannungen, regt die Zirkulation an und bringt Ihren gesamten Körper in ein harmonisches Gleichgewicht." data-en="Relieves muscular tension, stimulates circulation, and returns your entire body to harmonious balance.">Löst muskuläre Verspannungen, regt die Zirkulation an und bringt Ihren gesamten Körper in ein harmonisches Gleichgewicht.</p>
       </div>
 
       <!-- 2. Sportmassage -->
       <div class="service-card reveal-up">
-        <i class="fa-solid fa-bolt service-icon"></i>
+        <i class="fa-solid fa-person-running service-icon"></i>
         <h3 data-de="Sportmassage" data-en="Sports Massage">Sportmassage</h3>
-        <p data-de="Kräftige und dynamische Griffe zur Beschleunigung der Muskelregeneration und Leistungssteigerung." data-en="Dynamic and targeted techniques designed to accelerate muscle recovery and enhance physical performance.">Kräftige und dynamische Griffe zur Beschleunigung der Muskelregeneration und Leistungssteigerung.</p>
+        <p data-de="Gezielte, dynamische Griffe zur Beschleunigung der muskulären Regeneration und zur Optimierung Ihrer Beweglichkeit." data-en="Targeted, dynamic techniques designed to accelerate muscle recovery and enhance mobility.">Gezielte, dynamische Griffe zur Beschleunigung der muskulären Regeneration und zur Optimierung Ihrer Beweglichkeit.</p>
       </div>
 
       <!-- 3. Triggerpunkt & Deep Tissue -->
       <div class="service-card reveal-up">
-        <i class="fa-solid fa-bullseye service-icon"></i>
+        <i class="fa-solid fa-gem service-icon"></i>
         <h3 data-de="Triggerpunkt & Deep Tissue" data-en="Trigger Point & Deep Tissue">Triggerpunkt & Deep Tissue</h3>
-        <p data-de="Gezielte Bearbeitung tiefsitzender Muskelverhärtungen und chronischer Schmerzpunkte." data-en="Deep tissue focus targeting chronic tension and specific trigger points for lasting relief.">Gezielte Bearbeitung tiefsitzender Muskelverhärtungen und chronischer Schmerzpunkte.</p>
+        <p data-de="Tiefenwirksame Bearbeitung chronischer Verhärtungen und Schmerzpunkte für lang anhaltende Befreiung." data-en="Deep tissue focus targeting chronic tension and trigger points for lasting physical freedom.">Tiefenwirksame Bearbeitung chronischer Verhärtungen und Schmerzpunkte für lang anhaltende Befreiung.</p>
       </div>
 
       <!-- 4. Entspannungsmassage -->
       <div class="service-card reveal-up">
         <i class="fa-solid fa-spa service-icon"></i>
         <h3 data-de="Entspannungsmassage" data-en="Relaxation Massage">Entspannungsmassage</h3>
-        <p data-de="Sanfte, fließende Bewegungen zur Reduktion von Stress und zur Beruhigung des Nervensystems." data-en="Gentle, soothing strokes tailored to calm the nervous system and dissolve daily stress.">Sanfte, fließende Bewegungen zur Reduktion von Stress und zur Beruhigung des Nervensystems.</p>
+        <p data-de="Fließende, sanfte Massagestriche zur tiefen Beruhigung des Nervensystems und zum Abbau von mentalem Stress." data-en="Gentle, soothing strokes tailored to calm the nervous system and dissolve mental stress.">Fließende, sanfte Massagestriche zur tiefen Beruhigung des Nervensystems und zum Abbau von mentalem Stress.</p>
       </div>
 
       <!-- 5. Kieferbalance R.E.S.E.T.® -->
       <div class="service-card reveal-up">
-        <i class="fa-solid fa-face-smile service-icon"></i>
+        <i class="fa-solid fa-hand-sparkles service-icon"></i>
         <h3 data-de="Kieferbalance R.E.S.E.T.®" data-en="Jaw Balance R.E.S.E.T.®">Kieferbalance R.E.S.E.T.®</h3>
-        <p data-de="Sanftes Verfahren zur Entspannung der Kiefermuskulatur und Entlastung von Kopf und Nacken." data-en="A gentle method to release jaw muscle tension, easing neck strain and headaches.">Sanftes Verfahren zur Entspannung der Kiefermuskulatur und Entlastung von Kopf und Nacken.</p>
+        <p data-de="Ein sanftes, hochwirksames Verfahren zur Entlastung der Kiefermuskulatur und Beseitigung von Nacken- und Kopfverspannungen." data-en="A gentle, highly effective method to release jaw muscle tension and alleviate neck strain and headaches.">Ein sanftes, hochwirksames Verfahren zur Entlastung der Kiefermuskulatur und Beseitigung von Nacken- und Kopfverspannungen.</p>
       </div>
 
       <!-- 6. Dorn-Therapie -->
       <div class="service-card reveal-up">
-        <i class="fa-solid fa-bone service-icon"></i>
+        <i class="fa-solid fa-bahai service-icon"></i>
         <h3 data-de="Dorn-Therapie" data-en="Dorn Therapy">Dorn-Therapie</h3>
-        <p data-de="Sanfte manuelle Korrektur von Wirbel- und Gelenkfehlstellungen in der natürlichen Bewegung." data-en="Gentle manual alignment of joints and vertebrae performed during dynamic body movement.">Sanfte manuelle Korrektur von Wirbel- und Gelenkfehlstellungen in der natürlichen Bewegung.</p>
+        <p data-de="Sanfte manuelle Richtigstellung von Wirbeln und Gelenken in der natürlichen Bewegung des Körpers." data-en="Gentle manual alignment of joints and vertebrae performed during natural body movement.">Sanfte manuelle Richtigstellung von Wirbeln und Gelenken in der natürlichen Bewegung des Körpers.</p>
       </div>
 
       <!-- 7. Schröpfmassage -->
       <div class="service-card reveal-up">
-        <i class="fa-solid fa-circle-dot service-icon"></i>
+        <i class="fa-solid fa-circle-nodes service-icon"></i>
         <h3 data-de="Schröpfmassage" data-en="Cupping Massage">Schröpfmassage</h3>
-        <p data-de="Traditionelle Unterdruck-Methode zur tiefen Gewebeentspannung und Aktivierung des Lymphflusses." data-en="Traditional suction cup technique for deep tissue relaxation and lymphatic circulation.">Traditionelle Unterdruck-Methode zur tiefen Gewebeentspannung und Aktivierung des Lymphflusses.</p>
+        <p data-de="Traditionelle Unterdruck-Therapie zur tiefen Gewebeentschlackung, Förderung des Lymphflusses und Schmerzlinderung." data-en="Traditional suction cup technique for deep tissue detox, lymphatic circulation, and pain relief.">Traditionelle Unterdruck-Therapie zur tiefen Gewebeentschlackung, Förderung des Lymphflusses und Schmerzlinderung.</p>
       </div>
     </div>
   </section>
@@ -593,8 +535,8 @@
   <!-- CONTACT SECTION -->
   <section class="contact-section" id="kontakt">
     <div class="contact-box reveal-zoom">
-      <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem;" data-de="Kontakt & Termin" data-en="Contact & Reservation">Kontakt & Termin</h2>
-      <p style="color: var(--text-muted);" data-de="Ich freue mich auf Ihren Besuch in meinem Studio in Tamm." data-en="I look forward to welcoming you to my studio in Tamm.">Ich freue mich auf Ihren Besuch in meinem Studio in Tamm.</p>
+      <h2 class="font-serif" style="font-size: 3rem; margin-bottom: 1rem;" data-de="Ihr Termin für Erholung" data-en="Reserve Your Session">Ihr Termin für Erholung</h2>
+      <p style="color: var(--text-muted);" data-de="Sichern Sie sich Ihre persönliche Auszeit im Studio in Tamm." data-en="Secure your personal sanctuary session at our studio in Tamm.">Sichern Sie sich Ihre persönliche Auszeit im Studio in Tamm.</p>
 
       <div class="contact-links">
         <a href="tel:015121216676" class="contact-item">
@@ -613,39 +555,13 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Melanies Massage Studio Tamm. All rights reserved.</p>
+    <p>&copy; 2026 Zoller Bodywork Tamm. All rights reserved.</p>
   </footer>
 
-  <!-- ROTATING LIGHT 3D PARTICLE SPHERE & MOBILE NAVIGATION LOGIC -->
+  <!-- ROTATING 3D PARTICLE SPHERE CANVAS & CRAZY SCROLL SCRIPT -->
   <script>
-    /* --- 1. MOBILE MENU TOGGLE --- */
-    function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      const menuIcon = document.getElementById('menuIcon');
-      navLinks.classList.toggle('nav-active');
-      
-      if(navLinks.classList.contains('nav-active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-xmark');
-      } else {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      }
-    }
-
-    function closeMenu() {
-      const navLinks = document.getElementById('navLinks');
-      const menuIcon = document.getElementById('menuIcon');
-      if(navLinks.classList.contains('nav-active')) {
-        navLinks.classList.remove('nav-active');
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      }
-    }
-
-    /* --- 2. ROTATING 3D PARTICLE SPHERE CANVAS (LIGHT THEME) --- */
+    /* --- 1. ROTATING 3D PARTICLE SPHERE CANVAS EFFECT --- */
     const canvas = document.getElementById('particleCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -657,28 +573,30 @@
       height = canvas.height = window.innerHeight;
     });
 
-    const numParticles = window.innerWidth < 768 ? 220 : 350;
+    const numParticles = 380;
     const particles = [];
     const sphereRadius = Math.min(width, height) * 0.35;
 
+    // Create 3D particles on a sphere volume
     for (let i = 0; i < numParticles; i++) {
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos((Math.random() * 2) - 1);
-      const r = sphereRadius * (0.35 + Math.random() * 0.65);
+      const r = sphereRadius * (0.4 + Math.random() * 0.6);
 
       particles.push({
         x: r * Math.sin(phi) * Math.cos(theta),
         y: r * Math.sin(phi) * Math.sin(theta),
         z: r * Math.cos(phi),
         size: Math.random() * 2.2 + 0.8,
-        color: Math.random() > 0.45 ? '#b89248' : '#d4b36a'
+        color: Math.random() > 0.4 ? '#d4af37' : '#84a98c'
       });
     }
 
-    let angleX = 0.0018;
-    let angleY = 0.0025;
+    let angleX = 0.002;
+    let angleY = 0.003;
     let scrollSpeedMultiplier = 1;
 
+    // Particle Animation Loop
     function renderParticles() {
       ctx.clearRect(0, 0, width, height);
 
@@ -686,9 +604,11 @@
       const centerY = height / 2;
 
       particles.forEach(p => {
+        // Rotate around Y axis
         let x1 = p.x * Math.cos(angleY * scrollSpeedMultiplier) - p.z * Math.sin(angleY * scrollSpeedMultiplier);
         let z1 = p.z * Math.cos(angleY * scrollSpeedMultiplier) + p.x * Math.sin(angleY * scrollSpeedMultiplier);
 
+        // Rotate around X axis
         let y1 = p.y * Math.cos(angleX * scrollSpeedMultiplier) - z1 * Math.sin(angleX * scrollSpeedMultiplier);
         let z2 = z1 * Math.cos(angleX * scrollSpeedMultiplier) + p.y * Math.sin(angleX * scrollSpeedMultiplier);
 
@@ -696,20 +616,22 @@
         p.y = y1;
         p.z = z2;
 
+        // Perspective Projection
         const fov = 400;
         const scale = fov / (fov + p.z + 200);
         const projX = p.x * scale + centerX;
         const projY = p.y * scale + centerY;
 
-        const alpha = Math.max(0.15, (p.z + sphereRadius) / (sphereRadius * 2));
+        const alpha = Math.max(0.1, (p.z + sphereRadius) / (sphereRadius * 2));
 
         ctx.beginPath();
         ctx.arc(projX, projY, p.size * scale, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = alpha * 0.75;
+        ctx.globalAlpha = alpha * 0.85;
         ctx.fill();
       });
 
+      // Slowly decay scroll speed boost
       if (scrollSpeedMultiplier > 1) {
         scrollSpeedMultiplier *= 0.96;
       }
@@ -719,16 +641,16 @@
 
     renderParticles();
 
-    // Accelerate particle spin on scroll or touch drag
+    // Accelerate particle sphere spin on scroll
     window.addEventListener('scroll', () => {
-      scrollSpeedMultiplier = 3.5;
+      scrollSpeedMultiplier = 4.5;
     });
 
 
-    /* --- 3. INTERSECTION OBSERVER FOR SCROLL REVEALS --- */
+    /* --- 2. INTERSECTION OBSERVER FOR CRAZY SCROLL REVEALS --- */
     const observerOptions = {
       root: null,
-      threshold: 0.1
+      threshold: 0.15
     };
 
     const scrollObserver = new IntersectionObserver((entries) => {
@@ -744,7 +666,7 @@
     });
 
 
-    /* --- 4. BILINGUAL LANGUAGE SWITCHER --- */
+    /* --- 3. BILINGUAL LANGUAGE SWITCHER --- */
     let currentLang = 'de';
 
     function toggleLanguage() {
@@ -752,7 +674,7 @@
       document.getElementById('langToggle').innerText = currentLang === 'de' ? 'EN' : 'DE';
 
       document.querySelectorAll('[data-de]').forEach(element => {
-        element.innerHTML = currentLang === 'en' 
+        element.innerText = currentLang === 'en' 
           ? element.getAttribute('data-en') 
           : element.getAttribute('data-de');
       });
