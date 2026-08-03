@@ -1,343 +1,534 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Melanie’s Massage Studio | Premium Bodywork</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoller Bodywork | Massage & Körpertherapie Tamm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
 
-    <style>
-        :root {
-            --bg-pure: #ffffff;
-            --fog-green: rgba(198, 222, 195, 0.6);
-            --deep-black: #1a1a1a;
-            --nav-border: rgba(0, 0, 0, 0.05);
-        }
+  <style>
+    /* --- CSS VARIABLES & RESET --- */
+    :root {
+      --bg-main: #0f1412;
+      --bg-card: #18201d;
+      --accent-sage: #84a98c;
+      --accent-gold: #d4af37;
+      --text-light: #f4f1ea;
+      --text-muted: #a3b18a;
+      --glass-bg: rgba(24, 32, 29, 0.75);
+      --glass-border: rgba(132, 169, 140, 0.2);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        
-        html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-pure);
-            color: var(--deep-black);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        /* --- DYNAMISCHER NEBEL --- */
-        .fog-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: linear-gradient(to bottom, #fff, #fdfdfd);
-        }
+    h1, h2, h3, .brand-font {
+      font-family: 'Playfair Display', serif;
+    }
 
-        .fog-ball {
-            position: absolute;
-            background: var(--fog-green);
-            filter: blur(80px);
-            border-radius: 50%;
-            animation: drift 25s infinite alternate ease-in-out;
-            opacity: 0.7;
-        }
+    /* --- NAVIGATION --- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
 
-        .fog-1 { width: 70vw; height: 70vw; top: -10%; left: -10%; animation-duration: 30s; }
-        .fog-2 { width: 60vw; height: 60vw; bottom: 5%; right: -5%; animation-delay: -5s; animation-duration: 25s; }
-        .fog-3 { width: 40vw; height: 40vw; top: 30%; left: 40%; opacity: 0.4; animation-duration: 40s; }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      text-decoration: none;
+    }
 
-        @keyframes drift {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(10%, 15%) scale(1.2); }
-        }
+    .logo span {
+      color: var(--accent-sage);
+    }
 
-        /* --- PREMIUM NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 40px; left: 50%;
-            transform: translateX(-50%);
-            width: 85%; max-width: 900px;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(30px) saturate(150%);
-            -webkit-backdrop-filter: blur(30px);
-            border-radius: 100px;
-            border: 1px solid var(--nav-border);
-            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
 
-        nav.scrolled {
-            top: 20px;
-            width: 90%;
-            padding: 10px 30px;
-            background: rgba(255, 255, 255, 0.8);
-            border-color: rgba(0,0,0,0.08);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
-        }
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
 
-        .nav-brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
+    .nav-links a:hover {
+      color: var(--accent-sage);
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--deep-black);
-            margin-left: 30px;
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 300;
-            opacity: 0.7;
-            transition: 0.4s;
-        }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--accent-sage);
+      color: var(--text-light);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
 
-        .nav-links a:hover { opacity: 1; }
+    .lang-btn:hover {
+      background: var(--accent-sage);
+      color: var(--bg-main);
+    }
 
-        /* --- HERO --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+    /* --- HERO SECTION --- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1rem 4rem;
+      background: radial-gradient(circle at 50% 30%, rgba(132, 169, 140, 0.15) 0%, rgba(15, 20, 18, 1) 70%);
+      position: relative;
+    }
 
-        .hero span {
-            font-size: 0.85rem;
-            letter-spacing: 15px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            opacity: 0.4;
-        }
+    .hero-content {
+      max-width: 850px;
+    }
 
-        .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 300;
-            font-style: italic;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      background: rgba(132, 169, 140, 0.1);
+      border: 1px solid var(--accent-sage);
+      border-radius: 50px;
+      color: var(--accent-sage);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-        /* --- SECTIONS --- */
-        .section {
-            padding: 120px 20px;
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
 
-        .label {
-            font-size: 0.75rem;
-            letter-spacing: 12px;
-            text-transform: uppercase;
-            margin-bottom: 80px;
-            opacity: 0.3;
-        }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .service-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-        }
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      background: var(--accent-sage);
+      color: var(--bg-main);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: var(--transition);
+      box-shadow: 0 10px 20px rgba(132, 169, 140, 0.2);
+    }
 
-        .service-stack h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-            font-weight: 300;
-            letter-spacing: 1px;
-            color: rgba(26, 26, 26, 0.85);
-        }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(132, 169, 140, 0.35);
+    }
 
-        /* --- PREISE --- */
-        .pricing-row {
-            display: flex;
-            justify-content: center;
-            gap: 100px;
-            margin-top: 40px;
-        }
+    /* --- TRANSPARENT PRICING HIGHLIGHT --- */
+    .pricing-banner {
+      padding: 4rem 5%;
+      background: var(--bg-card);
+      border-y: 1px solid var(--glass-border);
+    }
 
-        .price-item .time {
-            font-size: 0.75rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--deep-black); /* Auf dunkle Schrift umgestellt */
-            opacity: 0.8; /* Leicht dezent, aber perfekt lesbar */
-            margin-bottom: 5px;
-        }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 2rem auto 0;
+    }
 
-        .price-item .val {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 300;
-        }
+    .price-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      padding: 2.5rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
 
-        /* --- KONTAKT --- */
-        .contact-card {
-            margin: 60px auto;
-            padding: 100px 20px;
-            max-width: 800px;
-            border-top: 1px solid rgba(0,0,0,0.03);
-            border-bottom: 1px solid rgba(0,0,0,0.03);
-        }
+    .price-card:hover {
+      border-color: var(--accent-sage);
+      transform: translateY(-5px);
+    }
 
-        .contact-card h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 6vw, 3.2rem);
-            font-weight: 300;
-            margin-bottom: 40px;
-            font-style: italic;
-        }
+    .price-card .time {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
 
-        .contact-card a {
-            display: block;
-            text-decoration: none;
-            color: var(--deep-black);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.4rem, 4vw, 1.8rem);
-            margin: 15px 0;
-            font-weight: 300;
-            transition: 0.5s;
-            word-break: break-all;
-        }
+    .price-card .amount {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      margin: 0.5rem 0;
+    }
 
-        footer {
-            padding: 80px 20px;
-            text-align: center;
-            font-size: 0.75rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            opacity: 0.3;
-        }
+    /* --- SERVICES SECTION --- */
+    .services {
+      padding: 7rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        /* --- MOBILE OPTIMIERUNG --- */
-        @media (max-width: 768px) {
-            nav {
-                width: calc(100% - 40px);
-                top: 20px;
-                padding: 12px 20px;
-                justify-content: center;
-            }
-            .nav-links { display: none; }
-            .nav-brand { font-size: 1.1rem; letter-spacing: 1px; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
 
-            .section { padding: 80px 25px; }
-            
-            .pricing-row { 
-                flex-direction: column; 
-                gap: 40px; 
-                align-items: center; 
-            }
-            
-            .price-item .val { font-size: 3rem; }
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-            .hero h1 { font-size: 3.2rem; }
-            
-            .contact-card { padding: 60px 15px; margin: 40px auto; }
-        }
-    </style>
+    .section-title p {
+      color: var(--text-muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent-sage);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: var(--accent-sage);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* --- SCROLL ANIMATION CLASSES --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- CONTACT SECTION --- */
+    .contact {
+      padding: 7rem 5%;
+      background: radial-gradient(circle at 50% 50%, rgba(24, 32, 29, 1) 0%, rgba(15, 20, 18, 1) 100%);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      color: var(--accent-sage);
+    }
+
+    .contact-item i {
+      font-size: 1.4rem;
+      color: var(--accent-sage);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* --- RESPONSIVE MOBILE MENU --- */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="fog-container">
-        <div class="fog-ball fog-1"></div>
-        <div class="fog-ball fog-2"></div>
-        <div class="fog-ball fog-3"></div>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#" class="logo">ZOLLER <span>BODYWORK</span></a>
+    <ul class="nav-links">
+      <li><a href="#about" data-de="Über Mich" data-en="About">Über Mich</a></li>
+      <li><a href="#services" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+      <li><a href="#preise" data-de="Preise" data-en="Pricing">Preise</a></li>
+      <li><a href="#kontakt" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">EN</button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content reveal">
+      <div class="hero-badge" data-de="📍 71732 Tamm" data-en="📍 71732 Tamm, Germany">📍 71732 Tamm</div>
+      <h1 data-de="Präzise Körpertherapie & Tiefenentspannung" data-en="Precision Bodywork & Deep Recovery">Präzise Körpertherapie & Tiefenentspannung</h1>
+      <p data-de="Maßgeschneiderte Massagen und regenerative Therapien – abgestimmt auf die individuellen Bedürfnisse Ihres Körpers." data-en="Tailored massage treatments and regenerative bodywork designed around your individual needs.">Maßgeschneiderte Massagen und regenerative Therapien – abgestimmt auf die individuellen Bedürfnisse Ihres Körpers.</p>
+      <a href="#kontakt" class="btn-primary" data-de="Termin Anfragen" data-en="Book Appointment">Termin Anfragen</a>
+    </div>
+  </section>
+
+  <!-- PRICING BANNER -->
+  <section class="pricing-banner" id="preise">
+    <div class="section-title reveal">
+      <h2 data-de="Transparente Preise" data-en="Transparent Pricing">Transparente Preise</h2>
+      <p data-de="Einfach, ehrlich und fair: 1 Minute = 1 Euro." data-en="Simple, honest, and straightforward: €1 per minute.">Einfach, ehrlich und fair: 1 Minute = 1 Euro.</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <div class="time">30 Minuten</div>
+        <div class="amount">30 €</div>
+        <p data-de="Fokussierte Behandlung" data-en="Targeted Session">Fokussierte Behandlung</p>
+      </div>
+      <div class="price-card">
+        <div class="time">40 Minuten</div>
+        <div class="amount">40 €</div>
+        <p data-de="Intensivbehandlung" data-en="Intensive Session">Intensivbehandlung</p>
+      </div>
+      <div class="price-card">
+        <div class="time">60 Minuten</div>
+        <div class="amount">60 €</div>
+        <p data-de="Ganzkörper & Tiefenregeneration" data-en="Full Body & Deep Recovery">Ganzkörper & Tiefenregeneration</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="section-title reveal">
+      <h2 data-de="Behandlungen & Therapien" data-en="Treatments & Therapies">Behandlungen & Therapien</h2>
+      <p data-de="Von gezielter Schmerzlinderung bis zu tiefenwirksamer Entspannung." data-en="From targeted pain relief to deep muscle relaxation.">Von gezielter Schmerzlinderung bis zu tiefenwirksamer Entspannung.</p>
     </div>
 
-    <nav id="main-nav">
-        <div class="nav-brand">Melanie’s Massage Studio</div>
-        <div class="nav-links">
-            <a href="#leistungen">Portfolio</a>
-            <a href="#preise">Preise</a>
-            <a href="#anfrage">Anfrage</a>
+    <div class="services-grid">
+      <!-- Klassische Massage -->
+      <div class="service-card reveal">
+        <div>
+          <i class="fa-solid fa-hands-holding service-icon"></i>
+          <h3 data-de="Klassische Massage" data-en="Classic Massage">Klassische Massage</h3>
+          <p data-de="Löst Verspannungen, fördert die Durchblutung und bringt den Körper wieder in eine natürliche Balance." data-en="Relieves tension, boosts circulation, and restores your body's natural balance.">Löst Verspannungen, fördert die Durchblutung und bringt den Körper wieder in eine natürliche Balance.</p>
         </div>
-    </nav>
+      </div>
 
-    <header class="hero">
-        <span data-aos="fade-down" data-aos-duration="2000">71732 Tamm</span>
-        <h1 data-aos="fade-up" data-aos-duration="2500">Melanie’s <br>Massage Studio</h1>
-    </header>
+      <!-- Sportmassage -->
+      <div class="service-card reveal">
+        <div>
+          <i class="fa-solid fa-bolt service-icon"></i>
+          <h3 data-de="Sportmassage" data-en="Sports Massage">Sportmassage</h3>
+          <p data-de="Kräftige und dynamische Griffe zur Beschleunigung der Muskelregeneration und Leistungssteigerung." data-en="Dynamic and deep techniques to accelerate muscular recovery and boost physical performance.">Kräftige und dynamische Griffe zur Beschleunigung der Muskelregeneration und Leistungssteigerung.</p>
+        </div>
+      </div>
 
-    <div class="container">
-        
-        <section id="leistungen" class="section">
-            <p class="label" data-aos="fade-up">Ausgewähltes Portfolio</p>
-            <div class="service-stack">
-                <div data-aos="fade-up" data-aos-delay="100"><h3>Klassische Massage</h3></div>
-                <div data-aos="fade-up" data-aos-delay="200"><h3>Sportmassage</h3></div>
-                <div data-aos="fade-up" data-aos-delay="300"><h3>Triggerpunkt & Deep Tissue</h3></div>
-                <div data-aos="fade-up" data-aos-delay="400"><h3>Entspannungsmassage</h3></div>
-                <div data-aos="fade-up" data-aos-delay="500"><h3>Kieferbalance R.E.S.E.T.&reg;</h3></div>
-                <div data-aos="fade-up" data-aos-delay="600"><h3>Dorn-Therapie</h3></div>
-                <div data-aos="fade-up" data-aos-delay="700"><h3>Schröpfmassage</h3></div>
-            </div>
-        </section>
+      <!-- Triggerpunkt & Deep Tissue -->
+      <div class="service-card reveal">
+        <div>
+          <i class="fa-solid fa-bullseye service-icon"></i>
+          <h3 data-de="Triggerpunkt & Deep Tissue" data-en="Trigger Point & Deep Tissue">Triggerpunkt & Deep Tissue</h3>
+          <p data-de="Gezielte Bearbeitung tiefsitzender Muskelverhärtungen und chronischer Schmerzpunkte." data-en="Targeted pressure on deep muscle knots to release chronic tension and restricted mobility.">Gezielte Bearbeitung tiefsitzender Muskelverhärtungen und chronischer Schmerzpunkte.</p>
+        </div>
+      </div>
 
-        <section id="preise" class="section">
-            <p class="label" data-aos="fade-up">Preise</p>
-            <div class="pricing-row" data-aos="fade-up">
-                <div class="price-item">
-                    <div class="time">30 Minuten</div>
-                    <div class="val">30€</div>
-                </div>
-                <div class="price-item">
-                    <div class="time">40 Minuten</div>
-                    <div class="val">40€</div>
-                </div>
-                <div class="price-item">
-                    <div class="time">60 Minuten</div>
-                    <div class="val">60€</div>
-                </div>
-            </div>
-        </section>
+      <!-- Entspannungsmassage -->
+      <div class="service-card reveal">
+        <div>
+          <i class="fa-solid fa-spa service-icon"></i>
+          <h3 data-de="Entspannungsmassage" data-en="Relaxation Massage">Entspannungsmassage</h3>
+          <p data-de="Sanfte, fließende Bewegungen zur Reduktion von Stress und zur Beruhigung des Nervensystems." data-en="Gentle, flowing strokes designed to reduce stress and calm the nervous system.">Sanfte, fließende Bewegungen zur Reduktion von Stress und zur Beruhigung des Nervensystems.</p>
+        </div>
+      </div>
 
-        <section id="anfrage" class="section">
-            <div class="contact-card" data-aos="fade-up">
-                <h2>Terminanfrage</h2>
-                <a href="tel:015121216676">0151 21216676</a>
-                <a href="mailto:zoller.bodywork@hotmail.com">zoller.bodywork@hotmail.com</a>
-                <!-- Auf dunkle Schrift umgestellt -->
-                <p style="margin-top: 40px; font-size: 0.75rem; letter-spacing: 8px; color: var(--deep-black); opacity: 0.8;">Tamm • Baden-Württemberg</p>
-            </div>
-        </section>
+      <!-- Kieferbalance R.E.S.E.T.® -->
+      <div class="service-card reveal">
+        <div>
+          <i class="fa-solid fa-face-smile service-icon"></i>
+          <h3 data-de="Kieferbalance R.E.S.E.T.®" data-en="Jaw Balance R.E.S.E.T.®">Kieferbalance R.E.S.E.T.®</h3>
+          <p data-de="Sanftes energetisches Verfahren zur Entspannung der Kiefermuskulatur und Entlastung des gesamten Körpers." data-en="A gentle method to relax the jaw muscles, easing TMJ issues, neck tightness, and headaches.">Sanftes energetisches Verfahren zur Entspannung der Kiefermuskulatur und Entlastung des gesamten Körpers.</p>
+        </div>
+      </div>
 
+      <!-- Dorn-Therapie -->
+      <div class="service-card reveal">
+        <div>
+          <i class="fa-solid fa-bone service-icon"></i>
+          <h3 data-de="Dorn-Therapie" data-en="Dorn Therapy">Dorn-Therapie</h3>
+          <p data-de="Sanfte Wirbel- und Gelenktherapie zur sanften Korrektur von Fehlstellungen in der Bewegung." data-en="A gentle manual alignment method for joints and vertebrae during dynamic body movement.">Sanfte Wirbel- und Gelenktherapie zur sanften Korrektur von Fehlstellungen in der Bewegung.</p>
+        </div>
+      </div>
+
+      <!-- Schröpfmassage -->
+      <div class="service-card reveal">
+        <div>
+          <i class="fa-solid fa-circle-dot service-icon"></i>
+          <h3 data-de="Schröpfmassage" data-en="Cupping Massage">Schröpfmassage</h3>
+          <p data-de="Traditionelle Unterdruck-Methode zur tiefen Gewebeentspannung und Aktivierung des Lymphflusses." data-en="Traditional suction cup technique to stimulate deep tissue blood circulation and lymphatic drainage.">Traditionelle Unterdruck-Methode zur tiefen Gewebeentspannung und Aktivierung des Lymphflusses.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        &copy; 2026 Melanie’s Massage Studio
-    </footer>
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="kontakt">
+    <div class="contact-container reveal">
+      <h2 data-de="Termin Vereinbaren" data-en="Book Your Session">Termin Vereinbaren</h2>
+      <p data-de="Ich freue mich darauf, Sie in meinem Studio in Tamm begrüßen zu dürfen." data-en="I look forward to welcoming you to my studio in Tamm.">Ich freue mich darauf, Sie in meinem Studio in Tamm begrüßen zu dürfen.</p>
+      
+      <div class="contact-info">
+        <a href="tel:015121216676" class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>0151 21216676</span>
+        </a>
+        <a href="mailto:zoller.bodywork@hotmail.com" class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>zoller.bodywork@hotmail.com</span>
+        </a>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>71732 Tamm</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ 
-            once: true,
-            easing: 'ease-out-quad',
-            duration: 1200
-        });
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Zoller Bodywork Tamm. All rights reserved.</p>
+  </footer>
 
-        window.onscroll = function() {
-            const nav = document.getElementById('main-nav');
-            if (window.pageYOffset > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-    </script>
+  <!-- JAVASCRIPT FOR SCROLL EFFECTS & BILINGUAL TOGGLE -->
+  <script>
+    // --- SCROLL REVEAL ANIMATION (IntersectionObserver) ---
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // --- LANGUAGE SWITCHER LOGIC ---
+    let currentLang = 'de';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'de' ? 'en' : 'de';
+      document.getElementById('langToggle').innerText = currentLang === 'de' ? 'EN' : 'DE';
+
+      document.querySelectorAll('[data-de]').forEach(element => {
+        if (currentLang === 'en') {
+          element.innerText = element.getAttribute('data-en');
+        } else {
+          element.innerText = element.getAttribute('data-de');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
