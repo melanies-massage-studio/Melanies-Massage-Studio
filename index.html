@@ -422,6 +422,130 @@
       font-weight: 500;
     }
 
+    /* --- GALLERY SECTION --- */
+    .gallery-section {
+      padding: 6rem 6%;
+      background: var(--bg-light);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-green);
+      background: var(--bg-card);
+      box-shadow: var(--shadow-subtle);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item.featured {
+      grid-column: span 2;
+      aspect-ratio: 16 / 9;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(25, 38, 32, 0) 40%, rgba(25, 38, 32, 0.75) 100%);
+      opacity: 0.85;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      color: #ffffff;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-tag {
+      font-family: 'Tenor Sans', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-mint);
+      margin-bottom: 0.3rem;
+    }
+
+    .gallery-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .gallery-item:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-5px);
+      border-color: var(--accent-sage);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* LIGHTBOX MODAL */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(15, 25, 20, 0.92);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      padding: 2rem;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      color: #ffffff;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: var(--transition-smooth);
+    }
+
+    .lightbox-close:hover {
+      color: var(--accent-mint);
+      transform: scale(1.1);
+    }
+
     /* --- CONTACT SECTION --- */
     .contact-section {
       padding: 6rem 6%;
@@ -536,12 +660,17 @@
         background: rgba(244, 247, 244, 0.8);
       }
 
-      .pricing-section, .services-section, .contact-section {
+      .pricing-section, .services-section, .gallery-section, .contact-section {
         padding: 4rem 5%;
       }
 
-      .services-grid, .pricing-cards {
+      .services-grid, .pricing-cards, .gallery-grid {
         grid-template-columns: 1fr;
+      }
+
+      .gallery-item.featured {
+        grid-column: span 1;
+        aspect-ratio: 4 / 3;
       }
 
       .contact-links {
@@ -569,6 +698,7 @@
         <li><a href="#start" onclick="closeMenu()" data-de="Start" data-en="Home">Start</a></li>
         <li><a href="#behandlungen" onclick="closeMenu()" data-de="Behandlungen" data-en="Treatments">Behandlungen</a></li>
         <li><a href="#preise" onclick="closeMenu()" data-de="Preise" data-en="Pricing">Preise</a></li>
+        <li><a href="#galerie" onclick="closeMenu()" data-de="Galerie" data-en="Gallery">Galerie</a></li>
         <li><a href="#kontakt" onclick="closeMenu()" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
       </ul>
       
@@ -608,7 +738,7 @@
     </div>
   </div>
 
-  <!-- SERVICES SECTION (JETZT ZUERST) -->
+  <!-- SERVICES SECTION -->
   <section class="services-section" id="behandlungen">
     <div class="section-header reveal-up">
       <h2 data-de="Behandlungen" data-en="Treatments">Behandlungen</h2>
@@ -659,7 +789,7 @@
     </div>
   </section>
 
-  <!-- PRICING SECTION (DANACH) -->
+  <!-- PRICING SECTION -->
   <section class="pricing-section" id="preise">
     <div class="section-header reveal-up">
       <h2 data-de="Preise" data-en="Pricing">Preise</h2>
@@ -682,6 +812,67 @@
       </div>
     </div>
   </section>
+
+  <!-- NEW GALLERY SECTION -->
+  <section class="gallery-section" id="galerie">
+    <div class="section-header reveal-up">
+      <h2 data-de="Impressionen & Raum" data-en="Impressions & Atmosphere">Impressionen & Raum</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;" data-de="Ein Einblick in den Behandlungsraum und Elemente der Ruhe und Körperharmonie." data-en="A glimpse into our treatment room and elements of stillness and body harmony.">Ein Einblick in den Behandlungsraum und Elemente der Ruhe und Körperharmonie.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- MAIN UPLOADED ROOM IMAGE -->
+      <div class="gallery-item featured reveal-up" onclick="openLightbox(this)">
+        <img src="input_file_0.png" alt="Behandlungsraum Melanie’s Massage Tamm">
+        <div class="gallery-overlay">
+          <span class="gallery-tag" data-de="Praxis Tamm" data-en="Studio Atmosphere">Praxis Tamm</span>
+          <h3 class="gallery-title" data-de="Unser Behandlungsraum & Entspannungsatmosphäre" data-en="Our Treatment Room & Relaxing Ambience">Unser Behandlungsraum & Entspannungsatmosphäre</h3>
+        </div>
+      </div>
+
+      <!-- ANATOMICAL / ART STATUE MODEL IMAGE -->
+      <div class="gallery-item reveal-up" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1533158307587-828f0a76ef46?auto=format&fit=crop&w=1000&q=80" alt="Anatomische Skulptur & Körperstruktur">
+        <div class="gallery-overlay">
+          <span class="gallery-tag" data-de="Anatomie & Präzision" data-en="Anatomy & Precision">Anatomie & Präzision</span>
+          <h3 class="gallery-title" data-de="Fokus auf Körperstruktur & Harmonie" data-en="Focus on Body Structure & Harmony">Fokus auf Körperstruktur & Harmonie</h3>
+        </div>
+      </div>
+
+      <!-- ZEN STONES & NATURE WATER -->
+      <div class="gallery-item reveal-up" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" alt="Zen Steine und Bambus Natur Wasser">
+        <div class="gallery-overlay">
+          <span class="gallery-tag" data-de="Natur & Ruhe" data-en="Nature & Peace">Natur & Ruhe</span>
+          <h3 class="gallery-title" data-de="Balance der Elemente" data-en="Balance of Elements">Balance der Elemente</h3>
+        </div>
+      </div>
+
+      <!-- GREEN BAMBOO FOREST NATURE -->
+      <div class="gallery-item reveal-up" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80" alt="Grüne Natur Entspannung">
+        <div class="gallery-overlay">
+          <span class="gallery-tag" data-de="Regeneration" data-en="Regeneration">Regeneration</span>
+          <h3 class="gallery-title" data-de="Sanfte Kraft der Natur" data-en="Gentle Power of Nature">Sanfte Kraft der Natur</h3>
+        </div>
+      </div>
+
+      <!-- BOTANICAL AROMATHERAPY / ESSENTIAL OILS -->
+      <div class="gallery-item reveal-up" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=80" alt="Aroma & Wohlbefinden Details">
+        <div class="gallery-overlay">
+          <span class="gallery-tag" data-de="Wohlbefinden" data-en="Wellness">Wohlbefinden</span>
+          <h3 class="gallery-title" data-de="Natürliche Öle & Essenzen" data-en="Natural Oils & Essences">Natürliche Öle & Essenzen</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="forceCloseLightbox()">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged gallery view">
+  </div>
 
   <!-- CONTACT SECTION -->
   <section class="contact-section" id="kontakt">
@@ -711,7 +902,7 @@
     <p>&copy; 2026 Melanie’s Massage Tamm. All rights reserved.</p>
   </footer>
 
-  <!-- ADVANCED JAVASCRIPT ANIMATIONS -->
+  <!-- ADVANCED JAVASCRIPT ANIMATIONS & LIGHTBOX -->
   <script>
     /* --- 1. MOUSE GLOW FOLLOWER (DESKTOP) --- */
     const cursorGlow = document.getElementById('cursorGlow');
@@ -745,7 +936,28 @@
       }
     }
 
-    /* --- 3. AMBIENT FEINNEBEL & MIKRO-PARTIKEL ENGINE --- */
+    /* --- 3. GALLERY LIGHTBOX --- */
+    function openLightbox(item) {
+      const img = item.querySelector('img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox') {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    }
+
+    function forceCloseLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    /* --- 4. AMBIENT FEINNEBEL & MIKRO-PARTIKEL ENGINE --- */
     const canvas = document.getElementById('particleCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -836,7 +1048,7 @@
 
     renderCanvas();
 
-    /* --- 4. 3D CARD TILT EFFECT ON MOUSEMOVE --- */
+    /* --- 5. 3D CARD TILT EFFECT ON MOUSEMOVE --- */
     const tiltCards = document.querySelectorAll('.tilt-card');
 
     tiltCards.forEach(card => {
@@ -860,7 +1072,7 @@
       });
     });
 
-    /* --- 5. INTERSECTION OBSERVER FOR SCROLL REVEAL --- */
+    /* --- 6. INTERSECTION OBSERVER FOR SCROLL REVEAL --- */
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -873,7 +1085,7 @@
       scrollObserver.observe(el);
     });
 
-    /* --- 6. BILINGUAL TOGGLE --- */
+    /* --- 7. BILINGUAL TOGGLE --- */
     let currentLang = 'de';
 
     function toggleLanguage() {
