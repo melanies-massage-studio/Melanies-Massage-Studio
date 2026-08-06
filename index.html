@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melanie’s Massage | Regeneration & Entspannung Tamm</title>
-  
+  <title>Instagram Post Template | Melanie’s Massage</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Tenor+Sans&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
 
   <style>
-    /* --- HIGH-END EUCALYPTUS & SAGE LUXURY SYSTEM --- */
     :root {
       --bg-light: #f4f7f4;
-      --bg-card: rgba(255, 255, 255, 0.75);
-      --bg-card-hover: rgba(255, 255, 255, 0.95);
+      --bg-card: rgba(255, 255, 255, 0.85);
       --accent-green: #2c4c3b;
       --accent-sage: #528265;
       --accent-mint: #8eb39b;
@@ -23,655 +21,239 @@
       --text-dark: #192620;
       --text-muted: #4e5f55;
       --border-green: rgba(44, 76, 59, 0.15);
-      --shadow-subtle: 0 20px 40px rgba(25, 38, 32, 0.04);
-      --shadow-hover: 0 30px 60px rgba(44, 76, 59, 0.12);
-      --glass-blur: blur(16px);
-      --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-subtle: 0 20px 40px rgba(25, 38, 32, 0.08);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-light);
+      background-color: #dce4dd;
       color: var(--text-dark);
-      font-size: 0.92rem;
-      line-height: 1.75;
-      overflow-x: hidden;
-      cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      letter-spacing: 1.5px;
+    .wrapper {
+      max-width: 600px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    /* CUSTOM DYNAMIC GLOW CURSOR (Desktop) */
-    .cursor-glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(142, 179, 155, 0.15) 0%, rgba(255,255,255,0) 70%);
+    /* --- INSTAGRAM POST CONTAINER (1:1 ASPECT RATIO) --- */
+    .insta-post {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: radial-gradient(circle at 50% 30%, #ffffff 0%, #e6ede7 70%, #d8e4db 100%);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(25, 38, 32, 0.15);
+      border: 1px solid var(--border-green);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3.5rem 3rem;
+    }
+
+    /* DEKORATIVE HINTERGRUND-ELEMENTE */
+    .bg-circle-1 {
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(142, 179, 155, 0.25) 0%, rgba(255,255,255,0) 70%);
       border-radius: 50%;
       pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      transition: transform 0.1s ease-out;
     }
 
-    /* --- NAVIGATION --- */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(244, 247, 244, 0.85);
-      backdrop-filter: var(--glass-blur);
-      border-bottom: 1px solid var(--border-green);
-      padding: 1rem 6%;
+    .bg-circle-2 {
+      position: absolute;
+      bottom: -15%;
+      left: -15%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(82, 130, 101, 0.15) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* HEADER: BRAND & LOCATION BADGE */
+    .post-header {
+      position: relative;
+      z-index: 2;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: var(--transition-smooth);
     }
 
-    .brand-logo {
+    .post-brand {
       font-family: 'Tenor Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 400;
+      font-size: 0.85rem;
       letter-spacing: 3px;
-      color: var(--text-dark);
-      text-decoration: none;
       text-transform: uppercase;
-      z-index: 1001;
+      color: var(--text-dark);
     }
 
-    .brand-logo span {
+    .post-brand span {
       color: var(--accent-sage);
     }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
+    .post-badge {
       font-family: 'Tenor Sans', sans-serif;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 2.5px;
-      position: relative;
-      padding-bottom: 4px;
-      transition: var(--transition-smooth);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 1px;
-      background: var(--accent-green);
-      transition: var(--transition-smooth);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .lang-btn {
-      font-family: 'Tenor Sans', sans-serif;
-      background: transparent;
-      border: 1px solid var(--accent-sage);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      border: 1px solid var(--border-green);
       color: var(--accent-green);
-      padding: 0.3rem 0.8rem;
-      border-radius: 40px;
-      cursor: pointer;
-      font-size: 0.68rem;
-      letter-spacing: 1.5px;
-      transition: var(--transition-smooth);
-      z-index: 1001;
     }
 
-    .lang-btn:hover {
-      background: var(--accent-green);
-      color: #ffffff;
-      border-color: var(--accent-green);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.3rem;
-      color: var(--text-dark);
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    /* --- HERO SECTION --- */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 7rem 1.2rem 4.5rem;
-      overflow: hidden;
-      background: radial-gradient(circle at 50% 50%, rgba(230, 237, 231, 0.6) 0%, var(--bg-light) 70%);
-    }
-
-    #particleCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-content {
+    /* CONTENT: MAIN HEADLINE & SUBTEXT */
+    .post-body {
       position: relative;
       z-index: 2;
-      max-width: 780px;
-      padding: 2.2rem 1.5rem;
-      background: rgba(244, 247, 244, 0.55);
-      backdrop-filter: blur(12px);
-      border-radius: 26px;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+      text-align: center;
+      margin: auto 0;
     }
 
-    .hero-tag {
+    .post-subtitle {
       font-family: 'Tenor Sans', sans-serif;
-      display: inline-block;
-      padding: 0.35rem 1.1rem;
-      border: 1px solid var(--border-green);
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 50px;
-      color: var(--accent-green);
-      font-size: 0.68rem;
-      letter-spacing: 2px;
+      font-size: 0.75rem;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3.6rem);
-      line-height: 1.15;
-      margin-bottom: 1.3rem;
-      color: var(--text-dark);
-      font-weight: 400;
-    }
-
-    .hero h1 span {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
       color: var(--accent-sage);
-      font-size: 1.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .post-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      line-height: 1.15;
+      color: var(--accent-green);
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+    }
+
+    .post-title span {
+      display: block;
+      font-style: italic;
+      color: var(--text-dark);
       font-weight: 300;
     }
 
-    .hero p {
+    .post-divider {
+      width: 50px;
+      height: 1px;
+      background: var(--accent-sage);
+      margin: 0 auto 1.4rem;
+      opacity: 0.6;
+    }
+
+    .post-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.92rem;
       color: var(--text-muted);
-      max-width: 560px;
-      margin: 0 auto 2.2rem;
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0 auto;
       font-weight: 300;
     }
 
-    .btn-green {
-      font-family: 'Tenor Sans', sans-serif;
-      display: inline-block;
-      padding: 0.95rem 2.4rem;
-      background: linear-gradient(135deg, #2c4c3b 0%, #1c3327 100%);
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.7rem;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: var(--transition-smooth);
-      box-shadow: 0 12px 30px rgba(44, 76, 59, 0.25);
-    }
-
-    .btn-green:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 18px 36px rgba(44, 76, 59, 0.35);
-    }
-
-    /* --- KINETIC TICKER MARQUEE --- */
-    .ticker-wrap {
-      width: 100%;
-      overflow: hidden;
-      background: var(--accent-green);
-      color: #ffffff;
-      padding: 0.8rem 0;
-      white-space: nowrap;
-      box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
-    }
-
-    .ticker-move {
-      display: inline-block;
-      animation: ticker 28s linear infinite;
-    }
-
-    .ticker-item {
-      display: inline-block;
-      padding: 0 1.8rem;
-      font-size: 0.72rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-family: 'Tenor Sans', sans-serif;
-      opacity: 0.9;
-    }
-
-    .ticker-item span {
-      color: var(--accent-mint);
-      margin-left: 1.8rem;
-    }
-
-    @keyframes ticker {
-      0% { transform: translate3d(0, 0, 0); }
-      100% { transform: translate3d(-50%, 0, 0); }
-    }
-
-    /* --- SERVICES SECTION --- */
-    .services-section {
-      padding: 6rem 6%;
-      background: var(--bg-light);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .section-header h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      color: var(--text-dark);
-      margin-bottom: 0.6rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      perspective: 1000px;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-green);
-      border-radius: 20px;
-      padding: 2.4rem 1.8rem;
-      box-shadow: var(--shadow-subtle);
-      transition: transform 0.15s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
-      transform-style: preserve-3d;
-    }
-
-    .service-card:hover {
-      border-color: var(--accent-sage);
-      box-shadow: var(--shadow-hover);
-      background: var(--bg-card-hover);
-    }
-
-    .service-icon {
-      font-size: 1.9rem;
-      color: var(--accent-sage);
-      margin-bottom: 1.3rem;
-      display: inline-block;
-      transition: var(--transition-smooth);
-    }
-
-    .service-card:hover .service-icon {
-      transform: scale(1.12) rotate(-4deg);
-      color: var(--accent-green);
-    }
-
-    .service-card h3 {
-      font-size: clamp(1.1rem, 1.8vw, 1.25rem);
-      margin-bottom: 0.8rem;
-      color: var(--text-dark);
-      font-weight: 500;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-
-    .service-card p {
-      color: var(--text-muted);
-      font-size: 0.86rem;
-      line-height: 1.65;
-      font-weight: 300;
-    }
-
-    /* --- PRICING SECTION --- */
-    .pricing-section {
-      padding: 6rem 6%;
+    /* FOOTER: SERVICES LIST & CALL TO ACTION */
+    .post-footer {
       position: relative;
-      background: var(--accent-soft-bg);
-    }
-
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      max-width: 950px;
-      margin: 0 auto;
-      perspective: 1000px;
-    }
-
-    .price-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-green);
-      backdrop-filter: var(--glass-blur);
-      border-radius: 20px;
-      padding: 2.8rem 1.8rem;
-      text-align: center;
-      position: relative;
-      box-shadow: var(--shadow-subtle);
-      transition: transform 0.15s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
-      transform-style: preserve-3d;
-    }
-
-    .price-box:hover {
-      border-color: var(--accent-sage);
-      box-shadow: var(--shadow-hover);
-      background: var(--bg-card-hover);
-    }
-
-    .price-duration {
-      font-family: 'Tenor Sans', sans-serif;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-    }
-
-    .price-amount {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.2rem;
-      color: var(--accent-green);
-      margin: 0.4rem 0;
-      font-weight: 500;
-    }
-
-    /* --- GALLERY SECTION --- */
-    .gallery-section {
-      padding: 6rem 6%;
-      background: var(--bg-light);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      max-width: 950px;
-      margin: 0 auto;
-    }
-
-    .gallery-item {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border-green);
-      background: var(--bg-card);
-      box-shadow: var(--shadow-subtle);
-      cursor: pointer;
-      aspect-ratio: 16 / 9;
-      transition: var(--transition-smooth);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(25, 38, 32, 0) 40%, rgba(25, 38, 32, 0.75) 100%);
-      opacity: 0.85;
+      z-index: 2;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.5rem;
-      color: #ffffff;
-      transition: var(--transition-smooth);
-    }
-
-    .gallery-tag {
-      font-family: 'Tenor Sans', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent-mint);
-      margin-bottom: 0.3rem;
-    }
-
-    .gallery-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: #ffffff;
-      line-height: 1.2;
-    }
-
-    .gallery-item:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-5px);
-      border-color: var(--accent-sage);
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-
-    /* LIGHTBOX MODAL */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background: rgba(15, 25, 20, 0.92);
-      backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-      padding: 2rem;
-    }
-
-    .lightbox.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .lightbox-img {
-      max-width: 90%;
-      max-height: 85vh;
-      border-radius: 16px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-      object-fit: contain;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      color: #ffffff;
-      font-size: 2rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      transition: var(--transition-smooth);
-    }
-
-    .lightbox-close:hover {
-      color: var(--accent-mint);
-      transform: scale(1.1);
-    }
-
-    /* --- CONTACT SECTION --- */
-    .contact-section {
-      padding: 6rem 6%;
-      background: linear-gradient(180deg, var(--bg-light) 0%, #e6ede7 100%);
-      text-align: center;
-    }
-
-    .contact-box {
-      max-width: 750px;
-      margin: 0 auto;
-      border: 1px solid var(--border-green);
-      border-radius: 24px;
-      padding: 3.5rem 1.8rem;
-      background: var(--bg-card);
-      backdrop-filter: var(--glass-blur);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.8rem;
-      margin-top: 2.2rem;
-    }
-
-    .contact-item {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: var(--text-dark);
-      text-decoration: none;
-      font-size: 0.88rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      transition: var(--transition-smooth);
-      padding: 0.55rem 1.1rem;
-      border-radius: 40px;
-      background: rgba(255, 255, 255, 0.6);
-      border: 1px solid rgba(44, 76, 59, 0.1);
-    }
-
-    .contact-item:hover {
-      color: var(--accent-green);
-      transform: translateY(-2px);
-      background: #ffffff;
-      border-color: var(--accent-sage);
-    }
-
-    .contact-item i {
-      color: var(--accent-sage);
-      font-size: 1.1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2.2rem 1rem;
+      justify-content: space-between;
+      align-items: flex-end;
       border-top: 1px solid var(--border-green);
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      background: #e6ede7;
+      padding-top: 1.2rem;
+    }
+
+    .footer-tags {
+      display: flex;
+      gap: 0.8rem;
+      list-style: none;
       font-family: 'Tenor Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
     }
 
-    /* --- SCROLL REVEAL ANIMATIONS --- */
-    .reveal-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: var(--transition-smooth);
+    .footer-cta {
+      font-family: 'Tenor Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: var(--accent-green);
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 20px rgba(44, 76, 59, 0.2);
     }
 
-    .reveal-active {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
+    /* --- CAPTION TEXT BOX (ZUM KOPIEREN) --- */
+    .caption-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.8rem;
+      border: 1px solid var(--border-green);
+      box-shadow: var(--shadow-subtle);
     }
 
-    /* --- RESPONSIVE MOBILE ADJUSTMENTS --- */
-    @media (max-width: 850px) {
-      .cursor-glow { display: none; }
+    .caption-box h3 {
+      font-family: 'Tenor Sans', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-sage);
+      margin-bottom: 1rem;
+    }
 
-      .mobile-menu-btn {
-        display: block;
+    .caption-content {
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      white-space: pre-line;
+      background: var(--bg-light);
+      padding: 1.2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(44, 76, 59, 0.08);
+    }
+
+    @media (max-width: 500px) {
+      .insta-post {
+        padding: 2rem 1.5rem;
       }
-
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 82%;
-        max-width: 300px;
-        height: 100vh;
-        background: rgba(244, 247, 244, 0.98);
-        backdrop-filter: blur(25px);
-        border-left: 1px solid var(--border-green);
-        flex-direction: column;
-        justify-content: center;
-        gap: 2.2rem;
-        transition: var(--transition-smooth);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.06);
+      .post-title {
+        font-size: 2rem;
       }
-
-      .nav-links.nav-active {
-        right: 0;
+      .post-text {
+        font-size: 0.82rem;
       }
-
-      .hero {
-        padding: 6rem 1rem 3rem;
+      .footer-tags {
+        display: none;
       }
-
-      .hero-content {
-        padding: 1.8rem 1.1rem;
-        background: rgba(244, 247, 244, 0.8);
-      }
-
-      .pricing-section, .services-section, .gallery-section, .contact-section {
-        padding: 4rem 5%;
-      }
-
-      .services-grid, .pricing-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-item {
-        aspect-ratio: 4 / 3;
-      }
-
-      .contact-links {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .contact-item {
+      .post-footer {
         justify-content: center;
       }
     }
@@ -679,322 +261,60 @@
 </head>
 <body>
 
-  <!-- DYNAMIC MOUSE GLOW -->
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="wrapper">
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#start" class="brand-logo">Melanie’s <span>Massage</span></a>
-    
-    <div class="nav-right">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#start" onclick="closeMenu()" data-de="Start" data-en="Home">Start</a></li>
-        <li><a href="#behandlungen" onclick="closeMenu()" data-de="Behandlungen" data-en="Treatments">Behandlungen</a></li>
-        <li><a href="#preise" onclick="closeMenu()" data-de="Preise" data-en="Pricing">Preise</a></li>
-        <li><a href="#galerie" onclick="closeMenu()" data-de="Galerie" data-en="Gallery">Galerie</a></li>
-        <li><a href="#kontakt" onclick="closeMenu()" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
-      </ul>
-      
-      <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">EN</button>
-      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu"><i class="fa-solid fa-bars" id="menuIcon"></i></button>
-    </div>
-  </nav>
+    <!-- INSTAGRAM POST CARD (1080x1080 RATIO PREVIEW) -->
+    <div class="insta-post">
+      <div class="bg-circle-1"></div>
+      <div class="bg-circle-2"></div>
 
-  <!-- HERO SECTION WITH ORGANIC MIST & MICRO-PARTICLE ENGINE -->
-  <section class="hero" id="start">
-    <canvas id="particleCanvas"></canvas>
-    
-    <div class="hero-content reveal-up">
-      <div class="hero-tag" data-de="📍 71732 Tamm" data-en="📍 71732 Tamm, Germany">📍 71732 Tamm</div>
-      <h1 data-de="Melanie’s Massage <span>Regeneration und Entspannung</span>" data-en="Melanie’s Massage <span>Recovery & Relaxation</span>">Melanie’s Massage <span>Regeneration und Entspannung</span></h1>
-      <p data-de="Erleben Sie individuell abgestimmte Behandlungen für gezielte Schmerzlinderung, tiefenwirksame Muskelregeneration und vollkommene Entspannung." data-en="Experience tailored treatments designed for targeted pain relief, deep muscular recovery, and total relaxation.">Erleben Sie individuell abgestimmte Behandlungen für gezielte Schmerzlinderung, tiefenwirksame Muskelregeneration und vollkommene Entspannung.</p>
-      <a href="#kontakt" class="btn-green" data-de="Termin Vereinbaren" data-en="Book Session">Termin Vereinbaren</a>
-    </div>
-  </section>
-
-  <!-- KINETIC RUNNING TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker-move" id="tickerMove">
-      <div class="ticker-item">Tiefenentspannung <span>•</span></div>
-      <div class="ticker-item">Schmerzlinderung <span>•</span></div>
-      <div class="ticker-item">Körpertherapie Tamm <span>•</span></div>
-      <div class="ticker-item">Muskelregeneration <span>•</span></div>
-      <div class="ticker-item">R.E.S.E.T.® Kieferbalance <span>•</span></div>
-      <div class="ticker-item">Dorn-Therapie <span>•</span></div>
-      <!-- Duplicate for seamless loop -->
-      <div class="ticker-item">Tiefenentspannung <span>•</span></div>
-      <div class="ticker-item">Schmerzlinderung <span>•</span></div>
-      <div class="ticker-item">Körpertherapie Tamm <span>•</span></div>
-      <div class="ticker-item">Muskelregeneration <span>•</span></div>
-      <div class="ticker-item">R.E.S.E.T.® Kieferbalance <span>•</span></div>
-      <div class="ticker-item">Dorn-Therapie <span>•</span></div>
-    </div>
-  </div>
-
-  <!-- SERVICES SECTION -->
-  <section class="services-section" id="behandlungen">
-    <div class="section-header reveal-up">
-      <h2 data-de="Behandlungen" data-en="Treatments">Behandlungen</h2>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card reveal-up">
-        <i class="fa-solid fa-hands-holding service-icon"></i>
-        <h3 data-de="Klassische Massage" data-en="Classic Massage">Klassische Massage</h3>
-        <p data-de="Löst muskuläre Verspannungen, fördert die Zirkulation und bringt den Körper wieder in eine natürliche Balance." data-en="Relieves muscular tension, boosts circulation, and restores your body's natural balance.">Löst muskuläre Verspannungen, fördert die Zirkulation und bringt den Körper wieder in eine natürliche Balance.</p>
+      <!-- HEADER -->
+      <div class="post-header">
+        <div class="post-brand">Melanie’s <span>Massage</span></div>
+        <div class="post-badge">📍 71732 Tamm</div>
       </div>
 
-      <div class="service-card reveal-up">
-        <i class="fa-solid fa-bolt service-icon"></i>
-        <h3 data-de="Sportmassage" data-en="Sports Massage">Sportmassage</h3>
-        <p data-de="Kräftige und dynamische Griffe zur Beschleunigung der Muskelregeneration und Leistungssteigerung." data-en="Dynamic and targeted techniques designed to accelerate muscle recovery and enhance physical performance.">Kräftige und dynamische Griffe zur Beschleunigung der Muskelregeneration und Leistungssteigerung.</p>
+      <!-- BODY -->
+      <div class="post-body">
+        <div class="post-subtitle">Regeneration & Entspannung</div>
+        <h1 class="post-title">Zeit für neue Kraft <span>& tiefe Erholung.</span></h1>
+        <div class="post-divider"></div>
+        <p class="post-text">Gönnen Sie Ihrem Körper eine gezielte Auszeit. Individuelle Massagen für Schmerzlinderung, Muskelregeneration und vollkommene Balance.</p>
       </div>
 
-      <div class="service-card reveal-up">
-        <i class="fa-solid fa-bullseye service-icon"></i>
-        <h3 data-de="Triggerpunkt & Deep Tissue" data-en="Trigger Point & Deep Tissue">Triggerpunkt & Deep Tissue</h3>
-        <p data-de="Gezielte Bearbeitung tiefsitzender Muskelverhärtungen und chronischer Schmerzpunkte." data-en="Deep tissue focus targeting chronic tension and specific trigger points for lasting relief.">Gezielte Bearbeitung tiefsitzender Muskelverhärtungen und chronischer Schmerzpunkte.</p>
-      </div>
-
-      <div class="service-card reveal-up">
-        <i class="fa-solid fa-spa service-icon"></i>
-        <h3 data-de="Entspannungsmassage" data-en="Relaxation Massage">Entspannungsmassage</h3>
-        <p data-de="Sanfte, fließende Bewegungen zur Reduktion von Stress und zur Beruhigung des Nervensystems." data-en="Gentle, soothing strokes tailored to calm the nervous system and dissolve daily stress.">Sanfte, fließende Bewegungen zur Reduktion von Stress und zur Beruhigung des Nervensystems.</p>
-      </div>
-
-      <div class="service-card reveal-up">
-        <i class="fa-solid fa-face-smile service-icon"></i>
-        <h3 data-de="Kieferbalance R.E.S.E.T.®" data-en="Jaw Balance R.E.S.E.T.®">Kieferbalance R.E.S.E.T.®</h3>
-        <p data-de="Sanftes Verfahren zur Entspannung der Kiefermuskulatur und Entlastung von Kopf und Nacken." data-en="A gentle method to release jaw muscle tension, easing neck strain and headaches.">Sanftes Verfahren zur Entspannung der Kiefermuskulatur und Entlastung von Kopf und Nacken.</p>
-      </div>
-
-      <div class="service-card reveal-up">
-        <i class="fa-solid fa-bone service-icon"></i>
-        <h3 data-de="Dorn-Therapie" data-en="Dorn Therapy">Dorn-Therapie</h3>
-        <p data-de="Sanfte manuelle Korrektur von Wirbel- und Gelenkfehlstellungen in der natürlichen Bewegung." data-en="Gentle manual alignment of joints and vertebrae performed during dynamic body movement.">Sanfte manuelle Korrektur von Wirbel- und Gelenkfehlstellungen in der natürlichen Bewegung.</p>
-      </div>
-
-      <div class="service-card reveal-up">
-        <i class="fa-solid fa-circle-dot service-icon"></i>
-        <h3 data-de="Schröpfmassage" data-en="Cupping Massage">Schröpfmassage</h3>
-        <p data-de="Traditionelle Unterdruck-Methode zur tiefen Gewebeentspannung und Aktivierung des Lymphflusses." data-en="Traditional suction cup technique for deep tissue relaxation and lymphatic circulation.">Traditionelle Unterdruck-Methode zur tiefen Gewebeentspannung und Aktivierung des Lymphflusses.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING SECTION -->
-  <section class="pricing-section" id="preise">
-    <div class="section-header reveal-up">
-      <h2 data-de="Preise" data-en="Pricing">Preise</h2>
-    </div>
-
-    <div class="pricing-cards">
-      <div class="price-box reveal-up">
-        <div class="price-duration">30 Minuten</div>
-        <div class="price-amount">30 €</div>
-      </div>
-
-      <div class="price-box reveal-up">
-        <div class="price-duration">40 Minuten</div>
-        <div class="price-amount">40 €</div>
-      </div>
-
-      <div class="price-box reveal-up">
-        <div class="price-duration">60 Minuten</div>
-        <div class="price-amount">60 €</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY SECTION WITH ONLY MASSAGE ROOM IMAGE -->
-  <section class="gallery-section" id="galerie">
-    <div class="section-header reveal-up">
-      <h2 data-de="Impressionen & Raum" data-en="Impressions & Atmosphere">Impressionen & Raum</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;" data-de="Ein Einblick in unseren Behandlungsraum und die Entspannungsatmosphäre." data-en="A glimpse into our treatment room and relaxing ambience.">Ein Einblick in unseren Behandlungsraum und die Entspannungsatmosphäre.</p>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item reveal-up" onclick="openLightbox(this)">
-        <img src="image.png" alt="Behandlungsraum Melanie’s Massage Tamm">
-        <div class="gallery-overlay">
-          <span class="gallery-tag" data-de="Praxis Tamm" data-en="Studio Atmosphere">Praxis Tamm</span>
-          <h3 class="gallery-title" data-de="Unser Behandlungsraum & Entspannungsatmosphäre" data-en="Our Treatment Room & Relaxing Ambience">Unser Behandlungsraum & Entspannungsatmosphäre</h3>
+      <!-- FOOTER -->
+      <div class="post-footer">
+        <ul class="footer-tags">
+          <li>• Klassisch</li>
+          <li>• Sport</li>
+          <li>• Triggerpunkt</li>
+        </ul>
+        <div class="footer-cta">
+          <span>Termin Buchen</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- LIGHTBOX MODAL -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-    <button class="lightbox-close" onclick="forceCloseLightbox()">&times;</button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged gallery view">
+    <!-- READY-TO-USE INSTAGRAM CAPTION -->
+    <div class="caption-box">
+      <h3>Passender Instagram-Text zum Kopieren:</h3>
+      <div class="caption-content">Zeit für eine kleine Auszeit vom Alltag? 🌿✨
+
+Ob verspannte Muskeln nach dem Training oder einfach das Bedürfnis nach tiefer Erholung – eine gezielte Behandlung bringt Körper und Geist wieder in Balance.
+
+📍 Melanie’s Massage in 71732 Tamm
+✨ Klassische Massage, Sportmassage, Triggerpunkt-Behandlung & R.E.S.E.T.® Kieferbalance.
+
+Jetzt Termin vereinbaren:
+📞 0151 21216676
+✉️ zoller.bodywork@hotmail.com
+
+---
+#MassageTamm #Regeneration #Entspannung #Körpertherapie #Sportmassage Tamm #Ludwigsburg #Bietigheim #Wohlbefinden #AuszeitGönnen</div>
+    </div>
+
   </div>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-section" id="kontakt">
-    <div class="contact-box reveal-up">
-      <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 0.8rem;" data-de="Kontakt & Termin" data-en="Contact & Reservation">Kontakt & Termin</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;" data-de="Ich freue mich auf Ihren Besuch bei mir in Tamm." data-en="I look forward to welcoming you in Tamm.">Ich freue mich auf Ihren Besuch bei mir in Tamm.</p>
-
-      <div class="contact-links">
-        <a href="tel:015121216676" class="contact-item">
-          <i class="fa-solid fa-phone"></i>
-          <span>0151 21216676</span>
-        </a>
-        <a href="mailto:zoller.bodywork@hotmail.com" class="contact-item">
-          <i class="fa-solid fa-envelope"></i>
-          <span>zoller.bodywork@hotmail.com</span>
-        </a>
-        <div class="contact-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>71732 Tamm</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Melanie’s Massage Tamm. All rights reserved.</p>
-  </footer>
-
-  <!-- ADVANCED JAVASCRIPT ANIMATIONS & LIGHTBOX -->
-  <script>
-    /* --- 1. MOUSE GLOW FOLLOWER (DESKTOP) --- */
-    const cursorGlow = document.getElementById('cursorGlow');
-    window.addEventListener('mousemove', (e) => {
-      if (cursorGlow) {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-      }
-    });
-
-    /* --- 2. MOBILE MENU --- */
-    function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      const menuIcon = document.getElementById('menuIcon');
-      navLinks.classList.toggle('nav-active');
-      
-      if(navLinks.classList.contains('nav-active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-xmark');
-      } else {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      }
-    }
-
-    function closeMenu() {
-      const navLinks = document.getElementById('navLinks');
-      const menuIcon = document.getElementById('menuIcon');
-      if(navLinks.classList.contains('nav-active')) {
-        navLinks.classList.remove('nav-active');
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      }
-    }
-
-    /* --- 3. GALLERY LIGHTBOX --- */
-    function openLightbox(item) {
-      const img = item.querySelector('img');
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('active');
-    }
-
-    function closeLightbox(e) {
-      if (e.target.id === 'lightbox') {
-        document.getElementById('lightbox').classList.remove('active');
-      }
-    }
-
-    function forceCloseLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-
-    /* --- 4. LANGUAGE TOGGLE (DE / EN) --- */
-    let currentLang = 'de';
-    function toggleLanguage() {
-      currentLang = currentLang === 'de' ? 'en' : 'de';
-      document.getElementById('langToggle').innerText = currentLang === 'de' ? 'EN' : 'DE';
-      
-      document.querySelectorAll('[data-de]').forEach(el => {
-        const targetText = el.getAttribute(`data-${currentLang}`);
-        if (targetText) {
-          el.innerHTML = targetText;
-        }
-      });
-    }
-
-    /* --- 5. SCROLL REVEAL ANIMATION --- */
-    const revealElements = document.querySelectorAll('.reveal-up');
-    const revealOnScroll = () => {
-      const windowHeight = window.innerHeight;
-      revealElements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 60) {
-          el.classList.add('reveal-active');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-
-    /* --- 6. AMBIENT FEINNEBEL & MIKRO-PARTIKEL ENGINE --- */
-    const canvas = document.getElementById('particleCanvas');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      let width = canvas.width = window.innerWidth;
-      let height = canvas.height = window.innerHeight;
-
-      window.addEventListener('resize', () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-      });
-
-      class Particle {
-        constructor() {
-          this.reset();
-        }
-        reset() {
-          this.x = Math.random() * width;
-          this.y = Math.random() * height;
-          this.radius = Math.random() * 2 + 0.5;
-          this.alpha = Math.random() * 0.4 + 0.1;
-          this.speedY = Math.random() * 0.4 + 0.1;
-          this.speedX = (Math.random() - 0.5) * 0.2;
-        }
-        update() {
-          this.y -= this.speedY;
-          this.x += this.speedX;
-          if (this.y < 0 || this.x < 0 || this.x > width) {
-            this.reset();
-            this.y = height;
-          }
-        }
-        draw() {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(142, 179, 155, ${this.alpha})`;
-          ctx.fill();
-        }
-      }
-
-      const particles = Array.from({ length: 40 }, () => new Particle());
-
-      function animateParticles() {
-        ctx.clearRect(0, 0, width, height);
-        particles.forEach(p => {
-          p.update();
-          p.draw();
-        });
-        requestAnimationFrame(animateParticles);
-      }
-      animateParticles();
-    }
-  </script>
 </body>
 </html>
